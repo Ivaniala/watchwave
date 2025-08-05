@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/FAQ.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="header">
+        <h1>WatchWave FAQ</h1>
+    </div>
+    <div class="container">
+        <div class="faq">
+            <div class="faq-item">
+                <div class="question">1. What is WatchWave?</div>
+                <div class="answer">WatchWave is a website that provides the latest information and reviews on popular movies from various genres and countries.</div>
+            </div>
+            <div class="faq-item">
+                <div class="question">2. How do I search for movies on WatchWave?</div>
+                <div class="answer">You can use the search feature at the top of the page to find the movies you are looking for by title, genre, or actor.</div>
+            </div>
+            <div class="faq-item">
+                <div class="question">3. Does WatchWave offer movie streaming?</div>
+                <div class="answer">Currently, WatchWave does not offer movie streaming services. We only provide information and reviews about movies.</div>
+            </div>
+            <div class="faq-item">
+                <div class="question">4. How do I add a movie to my favorites?</div>
+                <div class="answer">To add a movie to your favorites, you need to sign in to your WatchWave account. On the movie page, click the "Add to Favorites" button, and the movie will be saved to your favorites list.</div>
+            </div>
+            <div class="faq-item">
+                <div class="question">5. How can I contact the WatchWave support team?</div>
+                <div class="answer">You can contact our support team through the 'Contact Us' page available at the bottom of the site.</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var questions = document.querySelectorAll('.question');
+            questions.forEach(function(question) {
+                question.addEventListener('click', function() {
+                    var answer = this.nextElementSibling;
+                    if (answer.style.display === 'block') {
+                        answer.style.display = 'none';
+                    } else {
+                        answer.style.display = 'block';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

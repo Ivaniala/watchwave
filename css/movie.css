@@ -1,0 +1,419 @@
+::-webkit-scrollbar{
+    width: 18px;
+}
+::-webkit-scrollbar-track{
+    background: var(--comment-box);
+}
+::-webkit-scrollbar-thumb{
+    background: var(--comment);
+}
+
+
+a{
+    text-decoration: none;
+}
+i{
+    cursor: pointer;
+}
+li{
+    list-style-type: none;
+}
+img{
+    cursor: pointer;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body{
+    width: 100%;
+    font-family: 'Montserrat',sans-serif;
+    background-color: #ede3f6;
+    user-select: none;
+}
+.container{
+    width: 100%;
+
+    z-index: 50;
+}
+.container .header{
+    width: 100%;
+    height: 50px;
+    padding: 1rem 10%;
+    z-index: 55;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .logo h1{
+    color:#402b61;
+    font-size: 2.4rem;
+    cursor: pointer;
+    font-family: serif text;
+}
+.navBar .nav-items{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4rem;
+}
+
+.navBar ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.navBar ul li a{
+    color: #402b61;
+    font-size: 1.15rem;
+    font-weight: 600;
+    transition: color 0.25s ease-in-out;
+    -webkit-transition: color 0.25s ease-in-out;
+    -moz-transition: color 0.25s ease-in-out;
+    -ms-transition: color 0.25s ease-in-out;
+    -o-transition: color 0.25s ease-in-out;
+}
+.navBar ul li a:hover{
+    color: var(--pink);
+}
+.navBar .user i{
+    font-size: 1.3rem;
+    color: #402b61;
+    transition: color 0.25s ease-in-out;
+    -webkit-transition: color 0.25s ease-in-out;
+    -moz-transition: color 0.25s ease-in-out;
+    -ms-transition: color 0.25s ease-in-out;
+    -o-transition: color 0.25s ease-in-out;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    width: 25px;
+    cursor: pointer;
+    flex: 1;
+}
+*searchbutton
+li{
+    list-style: none;
+    width: 860;
+    margin: 0 auto;
+    font-family: 'Montserrat',sans-serif;
+}
+
+.search-box{
+    background: #402b61;
+    position: absolute;
+    top: 54px;
+    right: 16.8%;
+    width: 350px;
+    height: 60px;
+    line-height: 60px;
+    box-shadow: 0 0 10px;
+    border-top: 4px solid #294B29;
+    display: none;
+}
+
+.search-box::before{
+    content: "";
+    position: absolute;
+    top: -32px;
+    right: 13px;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 14px solid transparent;
+    border-bottom: 14px solid #294B29;
+}
+
+.search-box input[type="text"]{
+    width: 200px;
+    padding: 5px 10px;
+    margin-left: 23px;
+    border: 1 px solid #294B29;
+    outline: none;
+}
+
+.search-box input[type="button"]{
+    width: 80px;
+    padding: 7px;
+    background: #294B29;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    margin-left: -6px;
+}
+
+.navBar .user i:hover{
+    color: var(--pink);
+}
+
+.navBar .close-btn i{
+    font-size: 2.4rem;
+    color: #fff;
+    position: absolute;
+    top: 2rem;
+    right: 3rem;
+    display: none;
+}
+
+.header .navBar .open-btn{
+    position: absolute;
+    right: 4rem;
+    top: 1.5rem;
+    color: #fff;
+    font-size: 2rem;
+    display: none;
+}
+
+
+.movie-btn .btn-1{
+    width: 120px;
+    height: 45px;
+    background-color: #8FBE74;
+    color: #222222;
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+    border: none;
+    outline: none;
+    font-size: 0.5 rem;
+    font-weight: 600;
+    font-family: 'Montserrat',sans-serif;
+    letter-spacing: 1.1px;
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    -ms-transition: all 0.25s ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
+    font-palette: #222222;
+}
+
+.movie-btn .btn-1:hover{
+    background-color: #294B29 ;
+    color: #fff;
+}
+.movie-btn .btn-2{
+    width: 120px;
+    height: 45px;
+    background-color: #294B29;
+    color: #fff;
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+    border: none;
+    outline: none;
+    font-size: 0.5 rem;
+    font-weight: 600;
+    font-family: 'Montserrat',sans-serif;
+    letter-spacing: 1.1px;
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    -ms-transition: all 0.25s ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
+}
+
+.movie-btn .btn-2:hover{
+    color: #222222;
+    background-color: #8FBE74;
+}
+
+
+
+.cards{
+    width: 180px;
+    height: 380px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.cards .card-img{
+    width: 180px;
+    height: 250px;
+    position: relative;
+}
+
+.card-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.card-img .img-title{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 45px;
+    height: 45px;
+    background-color: yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.img-title h4{
+    font-size: 0.8rem;
+}
+.img-title p{
+    font-size: 0.6rem;
+}
+.cards .card-title{
+    text-align: center;
+    margin-top: 0.7rem;
+}
+
+.card-title h3{
+    color: rgb(10, 10, 10);
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+.card-title p{
+    color: rgb(10, 10, 10) ;
+    font-weight: 400;
+    font-size: 0.65rem;
+    margin-top: 0.4rem;
+}
+
+
+/* --------------- */
+.movies{
+    margin-top: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.movies-title{
+    width: 90%;
+    margin: 0 auto;
+}
+.movies-title h1{
+    color: #402b61;
+    font-size: 1.60rem;
+    font-weight: 600;
+}
+
+.movies-ctg{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    width: 90%;
+    margin: 1.5rem auto;
+}
+
+.movies-ctg .btn{
+    margin-top: 1rem;
+    width: 110px;
+    height: 38px;
+    background-color: #985bf9;
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+    border: 3px solid #d9d9d9;
+    outline: none;
+    font-size: 0.78rem;
+    font-weight: 600;
+    font-family: 'Montserrat',sans-serif;
+    color: var(--black);
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    -ms-transition: all 0.25s ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
+}
+
+.movies-ctg .btn:hover{
+    border: 3px solid var(--pink);
+    color: var(--pink);
+}
+
+.movies-card{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    grid-template-rows: repeat(2,1fr);
+    margin: 1rem 5%;
+}
+
+/* ------------ */
+.footer{
+    position: relative;
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    background-color: #171B27;
+}
+
+.footer div{
+    height: 60px;
+}
+.footer h4{
+    color: #d9d9d9;
+    margin-top: 0.4rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+.footer .footer-social{
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.footer-social i{
+    width: 29px;
+    height: 29px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    color: var(--black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+}
+
+.footer-social i:hover{
+    background-color: var(--black);
+    color: var(--pink);
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}

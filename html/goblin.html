@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lemon&family=Libre+Baskerville:wght@400;700&family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="../css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/bb.css">
+    <title>Movie</title>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <h1>WatchWave</h1>
+            </div>
+            <nav class="navBar">
+                <div class="open-btn" id="open">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="nav-items">
+                    <ul class="list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="movie.html">Movies</a></li>
+                        <li><a href="tvseries.html">TV Series</a></li>
+                        <li><a href="favorite.html">Favorite</a></li>
+                        <div class="close-btn" id="close">
+                            <i class="fa-solid fa-xmark"></i>
+                        </div>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <div class="My Demon">
+            <div class="movie-description">
+                <div class="movie-image">
+                    <img src="../img/cover/goblin2.jpg" alt="">
+                </div>
+                <div class="movie-content">
+                    <div class="movie-trailer">
+                        <h1 class="title">Goblin</h1>
+                        <div class="movie-type">
+                            <p>Romance</p>
+                            <div class="line"></div>
+                            <p>Fantasy</p>
+                            <div class="line"></div>
+                            <p>Drama</p>
+                        </div>
+                    </div>
+                    <div class="imdb">
+                        <p>IMDb: 8,6</p>
+                        <p>16 Episode</p>
+                        <p>18+</p>
+                        <p>Korea, 2023</p>
+                        <p>Creator: <span>Kim Eun-sook</span></p>
+                        <p>Actors: <span>Gong yoo, Kim Go-eun, Lee Dong-Wook</span></p>
+                    </div>
+                    <div class="trailer">
+                        <a href="watch.html?movieId=10" class="btn-trailer"> Watch Trailer </a>
+                        <button onclick="addToFavorites()" class="button favorite">Favorite</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="movie-desc-2">
+            <h2>Description</h2>
+            <p>Tells the story of Kim Shin, a great war general in ancient times.
+            He was killed by the young king who was jealous of his greatness. Kim Shin eventually becomes a Dokkaebi (Goblin), who has eternal life. In his quest to find a bride to break his eternal curse, the 939 year old guardian of souls meets the angel of death and a student with a tragic past.
+            </p>
+        </div>
+
+        <div class="comments">
+            <h2>Comments</h2>
+            <div class="comment-box">
+                <input id="commentInput" type="text" placeholder="Leave a Comment">
+                <button onclick="addComment()">Submit</button>
+            </div>
+            <div id="commentsSection"></div>
+        </div>
+
+        <footer class="footer">
+            <div>
+                <h4>Movies</h4>
+                <h4>TV Series</h4>
+                <h4>Comming Soon</h4>
+            </div>
+            <div>
+                <h4>Privacy Policy</h4>
+                <h4>Cookie Policy</h4>
+                <h4>Terms of Use</h4>
+            </div>
+            <div>
+                <h4>Help Center</h4>
+                <h4>Support</h4>
+                <h4>FAQ</h4>
+            </div>
+            <div>
+                <h4>Follow Us</h4>
+                <div class="footer-social">
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js" integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="../js/swiper-bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/comment.js"></script>
+    <script src="../js/fav.js"></script>
+</body>
+</html>

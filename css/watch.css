@@ -1,0 +1,60 @@
+/* Global styles for body and html */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #414364; }
+
+/* Container styles */
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header styles */
+.header {
+    width: 100%;
+    padding: 10px;
+    background-color: #414364;
+    color: #fff;
+    text-align: center;
+}
+
+/* Main styles */
+main {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #414364;
+}
+
+/* Video container styles */
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff; /* Optional: background color */
+    max-width: 100%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+/* Iframe styles */
+#movie-iframe {
+    border: none;
+}
+.html5-video-player a {
+    color: none;
+    text-decoration: none;
+    -webkit-transition: color .1s cubic-bezier(0,0,.2,1);
+    transition: color .1s cubic-bezier(0,0,.2,1);
+    outline: 0;
+}

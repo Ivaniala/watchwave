@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch Movie</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/watch.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <h1>WatchWave</h1>
+            </div>
+        </header>
+        <main>
+            <div class="video-container">
+                <iframe id="movie-iframe" width="995" height="550" allowfullscreen></iframe>
+            </div>
+        </main>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const movieId = urlParams.get('movieId');
+        
+            if (movieId) {
+                fetch(`api/getMovie.php?id=${movieId}`)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`HTTP error! status: ${response.status}`);
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        console.log(data); // Log data untuk memeriksa respons
+                        if (data.videoUrl) {
+                            const videoIframe = document.getElementById('movie-iframe');
+                            const videoUrl = new URL(data.videoUrl);
+                            if (videoUrl.hostname === 'www.youtube.com' || videoUrl.hostname === 'youtu.be') {
+                                const videoId = videoUrl.searchParams.get('v') || videoUrl.pathname.split('/').pop();
+                                videoIframe.src = `https://www.youtube.com/embed/${videoId}`;
+                            } else {
+                                console.error('Invalid YouTube URL.');
+                                alert('Invalid YouTube URL.');
+                            }
+                        } else {
+                            console.error('Video URL not found.');
+                            alert('Video URL not found.');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error fetching movie data:', error);
+                        alert('Error fetching movie data: ' + error.message);
+                    });
+            } else {
+                console.error('Movie ID not provided.');
+                alert('Movie ID not provided.');
+            }
+        });        
+    </script>
+</body>
+</html>

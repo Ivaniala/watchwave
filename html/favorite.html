@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lemon&family=Libre+Baskerville:wght@400;700&family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="../css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../css/fav.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Favorite Movies</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('session.php')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.name) {
+                        document.getElementById('username').textContent = data.name;
+                        document.getElementById('user-link').setAttribute('href', '#'); 
+                        document.getElementById('logout-button').style.display = 'block';
+                    } else {
+                        document.getElementById('username').textContent = '';
+                        document.getElementById('logout-button').style.display = 'none';
+                    }
+                });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <h1>WatchWave</h1>
+            </div>
+            <nav class="navBar">
+                    <div class="open-btn" id="open">
+                        <i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="nav-items">
+                    <ul class="list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="movie.html">Movies</a></li>
+                        <li><a href="tvseries.html">TV Series</a></li>
+                        <li><a href="favorite.html">Favorite</a></li>
+                        <div class="close-btn" id="close">
+                            <i class="fa-solid fa-xmark"></i>
+                        </div>
+                    </ul>
+                    <ul class="user">
+                        <li><a href = "#"><i class = "fa-solid fa-user"></i><span id="username"></span></a>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+    </div>
+    <div class="favorite-title">
+        <h1>Favorite</h1>
+    </div>
+    <div id="favorite-movies"></div>
+    <footer class="footer">
+        <div>
+            <a href="movie.html"><h4>Movies</h4></a>
+            <a href="tvseries.html"><h4>TV Series</h4></a>
+            <h4>Coming Soon</h4>
+        </div>
+        <div>
+            <a href="privacypolicy.html"><h4>Privacy Policy</h4></a>
+            <a href="cookie_policy.html"><h4>Cookie Policy</h4></a>
+            <a href="TermsOf.html"><h4>Terms of Use</h4></a>
+        </div>
+        <div>
+            <a href = "help-center.html"><h4>Help Center</h4></a>
+            <a href="support.html"><h4>Support</h4></a>
+            <a href="faq.html"><h4>FAQ</h4></a>
+        </div>
+        <div>
+            <h4>Follow Us</h4>
+            <div class="footer-social">
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-twitter"></i>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+            let favoriteMoviesDiv = document.getElementById('favorite-movies');
+            
+            if (favorites.length === 0) {
+                favoriteMoviesDiv.innerHTML = '<p>No favorite movies yet.</p>';
+            } else {
+                favorites.forEach((movieId, index) => {
+                    let movieDiv = document.createElement('div');
+                    movieDiv.classList.add('movie', 'card-img');
+                    let movieNumber = index + 1;
+                    movieDiv.innerHTML = `
+                        <div class="img-title">
+                            <h3>${movieNumber}. ${movieId}</h3>
+                        </div>
+                        <button onclick="removeFromFavorites('${movieId}')">Remove</button>
+                    `;
+                    favoriteMoviesDiv.appendChild(movieDiv);
+                });
+            }
+        });
+
+        function removeFromFavorites(movieId) {
+            let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+            favorites = favorites.filter(id => id !== movieId);
+            localStorage.setItem('favorites', JSON.stringify(favorites));
+            // Update display after removing
+            let favoriteMoviesDiv = document.getElementById('favorite-movies');
+            favoriteMoviesDiv.innerHTML = ''; // Clear current content
+            favorites.forEach((movieId, index) => {
+                let movieDiv = document.createElement('div');
+                movieDiv.classList.add('movie', 'card-img');
+                let movieNumber = index + 1;
+                movieDiv.innerHTML = `
+                    <div class="img-title">
+                        <h3>${movieNumber}. ${movieId}</h3>
+                    </div>
+                    <button onclick="removeFromFavorites('${movieId}')">Remove</button>
+                `;
+                favoriteMoviesDiv.appendChild(movieDiv);
+            });
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js" integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="../js/swiper-bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

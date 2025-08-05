@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lemon&family=Libre+Baskerville:wght@400;700&family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="../css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>WatchWave</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('session.php')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.name) {
+                        document.getElementById('username').textContent = data.name;
+                        document.getElementById('user-link').setAttribute('href', '#'); // Optionally update the link
+                        document.getElementById('logout-button').style.display = 'block';
+                        document.getElementById('favorite-button').style.display = 'inline-block'; // Menampilkan tombol favorite jika pengguna sudah login
+                    } else {
+                        document.getElementById('username').textContent = '';
+                        document.getElementById('logout-button').style.display = 'none';
+                        document.getElementById('favorite-button').style.display = 'none'; 
+                    }
+                });
+        });
+        
+    
+        document.querySelectorAll('.movie-poster').forEach(function(poster) {
+            poster.addEventListener('click', function() {
+                const movieId = poster.getAttribute('data-movie-id');
+                // Redirect to watch.html with movieId as query parameter
+                window.location.href = `watch.html?movieId=${movieId}`;
+            });
+        });
+    </script>
+    
+    
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <h1>WatchWave</h1>
+            </div>
+            <nav class="navBar">
+                <div class="open-btn" id="open">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="nav-items">
+                    <ul class="list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="movie.html">Movies</a></li>
+                        <li><a href="tvseries.html">TV Series</a></li>
+                        <li><a href="favorite.html">Favorite</a></li>
+                        <div class="close-btn" id="close">
+                            <i class="fa-solid fa-xmark"></i>
+                        </div>
+                    </ul>
+                    <ul class="user">
+                        <li class="search-icon-container">
+                            <i class="fa fa-search" id="search-icon" aria-hidden="true"></i>
+                            <div class="search-box">
+                                <input type="text" id="search-input" placeholder="Search Movie...">
+                                <input type="button" id="search-button" value="Search">
+                                <div id="search-results"></div>
+                            </div> 
+                        </li>                        
+                        <li><a id="user-link" href="login.html"><i class="fa-solid fa-user"></i> <span id="username"></span></a></li> 
+                        <li id="logout-button" style="display: none;"><a href="logout.php" class="button">Logout</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+    </div>
+
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide slide-1">
+                <div class="swiper-container">
+                    <div class="type">
+                        <p>Animation</p>
+                        <div class="line"></div>
+                        <p>Action</p>
+                        <div class="line"></div>
+                        <p>Advanture</p>
+                    </div>
+                    <div class="movie-title">
+                        <h2>Spider-Man: Across the Spider-Verse</h2>
+                        <p>Miles Morales (Shameik Moore) tries to live a normal life in his universe and tries to hide his dual identity as Spider-Man. 
+                        One day, Miles meets someone from another universe named Jonathan Ohnn aka The Spot, who has the power to explore the universe. 
+                        Miles also meets Gwen Stacy (Hailee Steinfeld), aka Spider Woman, who visits him and takes him to explore the universe.
+                        However, Miles clashes with Miguel and the Spider Society over how to deal with the threat. A conflict occurs that forces Miles to be faced with two difficult choices: saving the people he loves or saving the entire universe.
+                        </p>
+                    </div>
+                    <div class="movie-rating">
+                        <div>
+                            <p>IMDb: 8,6</p>
+                        </div>
+                        <div>
+                            <p>1 h 35 m</p>
+                        </div>
+                        <div class="rect">
+                            <p>All Ages</p>
+                        </div>
+                    </div>
+                    
+                    <div class="movie-btn">
+                        <button class="btn-1"><a href="spider.html" style="text-decoration: none; color: inherit;">Watch Now</a></button>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide slide-2">
+                <div class="swiper-container">
+                    <div class="type">
+                        <p>Drama</p>
+                        <div class="line"></div>
+                        <p>Romance</p>
+                        <div class="line"></div>
+                        <p>Fantasy</p>
+                    </div>
+                    <div class="movie-title">
+                        <h2>My Demon</h2>
+                        <p>Tells the story of a female CEO who is independent and successfully married to her career. But everything changes when he becomes involved with a demon who temporarily loses his powers.
+                            She is Do Do Hee (Kim Yoo Jung), the heir to the Mirae Group. He displays an arrogant and strict personality, does not trust anyone, and is cynical about love. Her decision to get involved with a demon named Jeong Gu Won (Song Kang) leads her into a contract marriage that changes her life greatly.
+                        </p>
+                    </div>
+                    <div class="movie-rating">
+                        <div>
+                            <p>IMDb: 8,0</p>
+                        </div>
+                        <div>
+                            <p>Season 1</p>
+                        </div>
+                        <div class="rect">
+                            <p>18+</p>
+                        </div>
+                    </div>
+                    <div class="movie-btn">
+                        <button class="btn-1"><a href="mydemon.html" style="text-decoration: none; color: inherit;">Watch Now</a></button>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide slide-3">
+                <div class="swiper-container">
+                    <div class="type">
+                        <p>Drama</p>
+                        <div class="line"></div>
+                        <p>Romance</p>
+                        <div class="line"></div>
+                        <p>Fantasy</p>
+                    </div>
+                    <div class="movie-title">
+                        <h2>Goblin</h2>
+                        <p>Tells the story of Kim Shin, a great war general in ancient times.
+                            He was killed by the young king who was jealous of his greatness. Kim Shin eventually becomes a Dokkaebi (Goblin), who has eternal life. In his quest to find a bride to break his eternal curse, the 939 year old guardian of souls meets the angel of death and a student with a tragic past.
+                        </p>
+                    </div>
+                    <div class="movie-rating">
+                        <div>
+                            <p>IMDb: 8,6</p>
+                        </div>
+                        <div>
+                            <p>16 Episode</p>
+                        </div>
+                        <div class="rect">
+                            <p>18+</p>
+                        </div>
+                    </div>
+                    <div class="movie-btn">
+                        <button class="btn-1"><a href="goblin.html" style="text-decoration: none; color: inherit;">Watch Now</a></button>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide slide-4">
+                <div class="swiper-container">
+                    <div class="type">
+                        <p>Drama</p>
+                        <div class="line"></div>
+                        <p>Action</p>
+                        <div class="line"></div>
+                        <p>Romance</p>
+                    </div>
+                    <div class="movie-title">
+                        <h2>Descendants Of The Sun</h2>
+                        <p>Captain Yoo Si-Jin (Song Joong-ki) and Sergeant Major Seo Dae-young (Jin Goo) are trying to catch a motorbike thief named Kim Gi-beom. Because he suffered injuries when he fell from his motorbike, the thief was taken by two soldiers to Haesung Hospital, where Kang Mo-yeon (Song Hye-kyo) works as a doctor.
+                            Haesung Hospital is the place where Si-jin and Mo-yeon meet for the first time. Si-jin is fascinated by Mo-yeon's character and beauty. Unfortunately, Mo-yeon couldn't just trust these two soldiers. Moreover, Si-jin has the nickname "Big Boss" which is synonymous with gangster leaders. This made Mo-yeon suspicious that the two people (soldiers) were actually ganging up on her patient.
+                        </p>
+                    </div>
+                    <div class="movie-rating">
+                        <div>
+                            <p>IMDb: 8,6</p>
+                        </div>
+                        <div>
+                            <p>16 Episode</p>
+                        </div>
+                        <div class="rect">
+                            <p>18+</p>
+                        </div>
+                    </div>
+                    <div class="movie-btn">
+                        <button class="btn-1"><a href="dots.html" style="text-decoration: none; color: inherit;">Watch Now</a></button>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide slide-5">
+                <div class="swiper-container">
+                    <div class="type">
+                        <p>Crime</p>
+                        <div class="line"></div>
+                        <p>Action</p>
+                        <div class="line"></div>
+                        <p>Drama</p>
+                    </div>
+                    <div class="movie-title">
+                        <h2>THE BATMAN</h2>
+                        <p>During his second year of fighting crime, Batman pursued the Riddler, a sadistic serial killer who targeted political figures and elite citizens of Gotham City. 
+                            Batman attempts to uncover hidden corruption in the city and questions his family's involvement.
+                            He connects with his own family during the investigation, and is forced to make new allies to catch the Riddler and bring the corrupt to justice. 
+                            Batman also has to forge new relationships to unmask the culprit. He seeks to bring justice to the abuse of power and corruption that has long plagued the metropolis.
+                        </p>
+                    </div>
+                    <div class="movie-rating">
+                        <div>
+                            <p>IMDb: 7,8</p>
+                        </div>
+                        <div>
+                            <p>2 h 56 m</p>
+                        </div>
+                        <div class="rect">
+                            <p>18+</p>
+                        </div>
+                    </div>
+                    <div class="movie-btn">
+                        <button class="btn-1"><a href="batman.html" style="text-decoration: none; color: inherit;">Watch Now</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="slider-container">
+        <div class="slider-content">
+            <h1>Popular</h1>
+        </div>
+        <div class="owl-container">
+            <div class="owl-carousel owl-theme">
+                <div class="cards">
+                    <div class="card-img">
+                        <img src="../img/popular/airmata.jpg" alt="">
+                        <div class="img-title">
+                            <h4>6.9</h4>
+                            <p>IMDb</p>
+                        </div>
+                    </div>
+                    <div class="card-title">
+                        <a href="airmata.html">
+                        <h3>Air Mata di Ujung Sajadah</h3>
+                        <p>Drama, Family</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="cards">
+                    <div class="card-img">
+                        <img src="../img/popular/Welcome to samdal-ri.JPG" alt="">
+                        <div class="img-title">
+                            <h4>8.0</h4>
+                            <p>IMDb</p>
+                        </div>
+                    </div>
+                    <div class="card-title">
+                        <a href="welcometo.html">
+                        <h3>Welcome to Samdal-ri</h3>
+                        <p>Comedy, Drama, Romance </p>
+                        </a>
+                    </div>
+                </div>
+                <div class="cards">
+                    <div class="card-img">
+                        <img src="../img/popular/Barbie.jpg" alt="">
+                        <div class="img-title">
+                            <h4>6.8</h4>
+                            <p>IMDb</p>
+                        </div>
+                    </div>
+                    <div class="card-title">
+                        <a href="barbie.html">
+                        <h3>Barbie</h3>
+                        <p>Comedy, Adventure, Fantasy</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="cards">
+                    <div class="card-img">
+                        <img src="../img/popular/Gadis Kretek.JPG" alt="">
+                        <div class="img-title">
+                            <h4>8.2</h4>
+                            <p>IMDb</p>
+                        </div>
+                    </div>
+                    <div class="card-title">
+                        <a href="gadiskretek.html">
+                        <h3>Gadis Kretek</h3>
+                        <p>Drama, History, Romance</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="cards">
+                    <div class="card-img">
+                        <img src="../img/popular/petualangan sherina 2.jpg" alt="">
+                        <div class="img-title">
+                            <h4>7.2</h4>
+                            <p>IMDb</p>
+                        </div>
+                    </div>
+                    <div class="card-title">
+                        <a href="sherina.html">
+                        <h3>Petualangan Sherina 2</h3>
+                        <p>Drama, Adventure, Comedy</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="cards">
+                    <div class="card-img">
+                        <img src="../img/popular/My Demon.JPG" alt="">
+                        <div class="img-title">
+                            <h4>8.0</h4>
+                            <p>IMDb</p>
+                        </div>
+                    </div>
+                    <div class="card-title">
+                        <a href="mydemon.html">
+                        <h3>My Demon</h3>
+                        <p>Drama, Romance, Fantasy</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="cards" data-movie-id="1">
+                    <div class="card-img">
+                        <img src="../img/cover/spider.jpg" alt="">
+                        <div class="img-title">
+                            <h4>8.6</h4>
+                            <p>IMDb</p>
+                        </div>
+                    </div>
+                    <div class="card-title">
+                        <a href="spider.html">
+                        <h3>Spider-Man</h3>
+                        <p>Drama, Action, Advanture</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="cards">
+                    <div class="card-img">
+                        <img src="../img/cover/goblin2.jpg" alt="">
+                        <div class="img-title">
+                            <h4>8.6</h4>
+                            <p>IMDb</p>
+                        </div>
+                    </div>
+                    <div class="card-title">
+                        <a href="goblin.html">
+                        <h3>Goblin</h3>
+                        <p>Romance, Fantasy, Drama</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="cards">
+                    <div class="card-img">
+                        <img src="../img/cover/dots1.jpg" alt="">
+                        <div class="img-title">
+                            <h4>8.6</h4>
+                            <p>IMDb</p>
+                        </div>
+                    </div>
+                    <div class="card-title">
+                        <a href="dots.html">
+                        <h3>Descendants Of The Sun</h3>
+                        <p>Romance, Action, Drama</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="cards">
+                    <div class="card-img">
+                        <img src="../img/cover/batman1.jpg" alt="">
+                        <div class="img-title">
+                            <h4>7,8</h4>
+                            <p>IMDb</p>
+                        </div>
+                    </div>
+                    <div class="card-title">
+                        <a href="batman.html">
+                        <h3>The Batman</h3>
+                        <p>Drama, Action, Crime</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- -------------------- -->
+    <div class="movies">
+        <div class="movies-title">
+            <h1>Movies</h1>
+        </div>
+        <div class="movies-ctg">
+            <div class="ctg-1">
+                <button class="btn" onclick="fetchMovies(0)">All</button>
+                <button class="btn" onclick="fetchMovies(1)">Action</button>
+                <button class="btn" onclick="fetchMovies(2)">Adventure</button>
+                <button class="btn" onclick="fetchMovies(3)">Animation</button>
+                <button class="btn" onclick="fetchMovies(4)">Biography</button>
+                <button class="btn" onclick="fetchMovies(5)">Comedy</button>
+                <button class="btn" onclick="fetchMovies(6)">Crime</button>
+                <button class="btn" onclick="fetchMovies(7)">Drama</button>
+                <button class="btn" onclick="fetchMovies(8)">Family</button>
+                <button class="btn" onclick="fetchMovies(9)">Fantasy</button>
+                <button class="btn" onclick="fetchMovies(10)">Horror</button>
+                <button class="btn" onclick="fetchMovies(11)">History</button>
+                <button class="btn" onclick="fetchMovies(12)">Mystery</button>
+                <button class="btn" onclick="fetchMovies(13)">Romance</button>
+                <button class="btn" onclick="fetchMovies(14)">Thriller</button>
+            </div>
+        </div>
+
+        <div class="movies-card" id="movies-card">
+            <div class="cards">
+                <div class="card-img">
+                    <img src="../img/movie/Laskar pelangi.jpg" alt="">
+                    <div class="img-title">
+                        <h4>7.9</h4>
+                        <p>IMDb</p>
+                    </div>
+                </div>
+                <div class="card-title">
+                    <a href="laskarpelangi.html">
+                    <h3>Laskar Pelangi</h3>
+                    <p>Adventure, Drama, Family</p>
+                    </a>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="card-img">
+                    <img src="../img/movie/Trolls Band Together Trailer - The Screen Guide.jpg" alt="">
+                    <div class="img-title">
+                        <h4>6.0</h4>
+                        <p>IMDb</p>
+                    </div>
+                </div>
+                <div class="card-title">
+                    <h3>Trolls Band Together</h3>
+                    <p>Comedy, Adventure, Animation</p>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="card-img">
+                    <img src="../img/movie/Enola Holmes 2 (2022)(1).jpg" alt="">
+                    <div class="img-title">
+                        <h4>6.8</h4>
+                        <p>IMDb</p>
+                    </div>
+                </div>
+                <div class="card-title">
+                    <h3>Enola Holmes 2</h3>
+                    <p>Drama, Adventure, Action</p>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="card-img">
+                    <img src="../img/movie/Train to busan peninsula.jpg" alt="">
+                    <div class="img-title">
+                        <h4>5.5</h4>
+                        <p>IMDb</p>
+                    </div>
+                </div>
+                <div class="card-title">
+                    <h3>Train to Busan Peninsula</h3>
+                    <p>Action, Horror, Thriller</p>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="card-img">
+                    <img src="../img/movie/The Devil Wears Prada.jpg" alt="">
+                    <div class="img-title">
+                        <h4>6.9</h4>
+                        <p>IMDb</p>
+                    </div>
+                </div>
+                <div class="card-title">
+                    <h3>The Devil Wears Prada</h3>
+                    <p>Drama, Comedy</p>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="card-img">
+                    <img src="../img/movie/aadc2.jpg" alt="">
+                    <div class="img-title">
+                        <h4>7.3</h4>
+                        <p>IMDb</p>
+                    </div>
+                </div>
+                <div class="card-title">
+                    <h3>Ada Apa Dengan Cinta 2</h3>
+                    <p>Drama, Romance</p>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="card-img">
+                    <img src="../img/movie/Dilan 1990 (2018).jpg" alt="">
+                    <div class="img-title">
+                        <h4>7.0</h4>
+                        <p>IMDb</p>
+                    </div>
+                </div>
+                <div class="card-title">
+                    <h3>Dilan 1990</h3>
+                    <p>Drama, Romance</p>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="card-img">
+                    <img src="../img/movie/Harry Potter.jpg" alt="">
+                    <div class="img-title">
+                        <h4>7.3</h4>
+                        <p>IMDb</p>
+                    </div>
+                </div>
+                <div class="card-title">
+                    <h3>Harry Potter</h3>
+                    <p>Family, Adventure, Fantasy</p>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="card-img">
+                    <img src="../img/movie/The family plan.jpg" alt="">
+                    <div class="img-title">
+                        <h4>6.3</h4>
+                        <p>IMDb</p>
+                    </div>
+                </div>
+                <div class="card-title">
+                    <h3>The Family Plan</h3>
+                    <p>Action, Comedy, Family</p>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="card-img">
+                    <img src="../img/movie/Purple Hearts (2022).jpg" alt="">
+                    <div class="img-title">
+                        <h4>6.7</h4>
+                        <p>IMDb</p>
+                    </div>
+                </div>
+                <div class="card-title">
+                    <h3>Purple Hearts 2022</h3>
+                    <p>Drama, Romance</p>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="card-img">
+                    <img src="../img/movie/Sewu Dino.jpg" alt="">
+                    <div class="img-title">
+                        <h4>8.4</h4>
+                        <p>IMDb</p>
+                    </div>
+                </div>
+                <div class="card-title">
+                    <h3>Sewu Dino</h3>
+                    <p>Horror, Mystery, Thriller</p>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="card-img">
+                    <img src="../img/movie/Habibie & Ainun 3(1).jpg" alt="">
+                    <div class="img-title">
+                        <h4>7.2</h4>
+                        <p>IMDb</p>
+                    </div>
+                </div>
+                <div class="card-title">
+                    <h3>Habibie & Ainun</h3>
+                    <p>Romance, History, Biography</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- ------------------- -->
+    <div class="tv-series">
+    <div class="slider-container">
+        <div class="slider-content">
+            <h1>TV Series</h1>
+        </div>
+        <div class="owl-container">
+            <div class="owl-carousel owl-theme"id="movies-card">
+                <div class="cards">
+                    <div class="card-img">
+                        <img src="../img/series/Hidden Love.JPG" alt=""></a>
+                        <div class="img-title">
+                            <h4>8.6</h4>
+                            <p>IMDb</p>
+                        </div>
+                    </div>
+                    <div class="card-title">
+                        <a href="hiddenlove.html">
+                            <h3>Hidden Love</h3>
+                            <p>Drama, Romance</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="cards">
+                    <div class="card-img">
+                        <img src="../img/series/The penthouse .JPG" alt="">
+                        <div class="img-title">
+                            <h4>7.9</h4>
+                            <p>IMDb</p>
+                        </div>
+                    </div>
+                    <div class="card-title">
+                        <h3>Penthouse</h3>
+                        <p>Crime, Drama, Thriller</p>
+                    </div>
+                </div>
+                <div class="cards">
+                    <div class="card-img">
+                        <img src="../img/series/Wedding Agreement .JPG" alt="">
+                        <div class="img-title">
+                            <h4>6.7</h4>
+                            <p>IMDb</p>
+                        </div>
+                    </div>
+                    <div class="card-title">
+                        <h3>Wedding Agreement</h3>
+                        <p>Drama, Romance</p>
+                    </div>
+                </div>
+                <div class="cards">
+                    <div class="card-img">
+                        <img src="../img/series/Go Ahead.JPG" alt="">
+                        <div class="img-title">
+                            <h4>8.5</h4>
+                            <p>IMDb</p>
+                        </div>
+                    </div>
+                    <div class="card-title">
+                        <h3>Go Ahead</h3>
+                        <p>Drama, Comedy, Family</p>
+                    </div>
+                </div>
+                <div class="cards">
+                    <div class="card-img">
+                        <img src="../img/series/Vincenzo.JPG" alt="">
+                        <div class="img-title">
+                            <h4>8.4</h4>
+                            <p>IMDb</p>
+                        </div>
+                    </div>
+                    <div class="card-title">
+                        <h3>Vincenzo</h3>
+                        <p>Drama, Action</p>
+                    </div>
+                </div>
+                <div class="cards">
+                    <div class="card-img">
+                        <img src="../img/series/Antares.JPG" alt="">
+                        <div class="img-title">
+                            <h4>6.4</h4>
+                            <p>IMDb</p>
+                        </div>
+                    </div>
+                    <div class="card-title">
+                        <h3>Antares</h3>
+                        <p>Drama, Romance</p>
+                    </div>
+                </div>
+                <div class="cards">
+                    <div class="card-img">
+                        <img src="../img/series/Kaget Nikah.JPG" alt="">
+                        <div class="img-title">
+                            <h4>8.0</h4>
+                            <p>IMDb</p>
+                        </div>
+                    </div>
+                    <div class="card-title">
+                        <h3>Kaget Nikah</h3>
+                        <p>Drama, Romance, Comedy</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+
+
+
+    <!-- ------------------ -->
+    <div class="coming-soon">
+    <div class="slider-container">
+        <div class="slider-content">
+            <h1>Coming Soon</h1>
+        </div>
+        <div class="owl-container">
+            <div class="owl-carousel owl-theme"  id="movies-card">
+                <div class="cards">
+                    <div class="card-img">
+                        <img src="../img/cs/queen of tears poster.jpg" alt="">
+                        <div class="img-title">
+                            <h4>8.4</h4>
+                            <p>IMDb</p>
+                        </div>
+                    </div>
+                    <div class="card-title">
+                        <h3>Queen Of Tears</h3>
+                        <p>Drama, Romance, Family</p>
+                    </div>
+                </div>
+                <div class="cards">
+                    <div class="card-img">
+                        <img src="../img/cs/Upgraded (2024) Amazon Prime Movie Download 720p 1080p HD.jpg" alt="">
+                        <div class="img-title">
+                            <h4>6.1</h4>
+                            <p>IMDb</p>
+                        </div>
+                    </div>
+                    <div class="card-title">
+                        <h3>Upgraded</h3>
+                        <p>Comedy, Romance</p>
+                    </div>
+                </div>
+                <div class="cards">
+                    <div class="card-img">
+                        <img src="../img/cs/Film-Siksa-Kubur-Poster.jpg" alt="">
+                        <div class="img-title">
+                            <h4>7.1</h4>
+                            <p>IMDb</p>
+                        </div>
+                    </div>
+                    <div class="card-title">
+                        <h3>Siksa Kubur</h3>
+                        <p>Horror, Thriller</p>
+                    </div>
+                </div>
+                <div class="cards">
+                    <div class="card-img">
+                        <img src="../img/cs/Тоже Ditto.jpg" alt="">
+                        <div class="img-title">
+                            <h4>6.7</h4>
+                            <p>IMDb</p>
+                        </div>
+                    </div>
+                    <div class="card-title">
+                        <h3>Ditto</h3>
+                        <p>Drama, Fantasy, Romance</p>
+                    </div>
+                </div>
+                <div class="cards">
+                    <div class="card-img">
+                        <img src="../img/cs/5 Fakta Menarik Film Dua Hati Biru, Punya Alur Cerita Lebih Kompleks.jpg" alt="">
+                        <div class="img-title">
+                            <h4>8.5</h4>
+                            <p>IMDb</p>
+                        </div>
+                    </div>
+                    <div class="card-title">
+                        <h3>Dua Hati Biru</h3>
+                        <p>Drama, Romance, Family</p>
+                    </div>
+                </div>  
+                <div class="cards">
+                    <div class="card-img">
+                        <img src="../img/cs/The hunger games.jpg" alt="">
+                        <div class="img-title">
+                            <h4>6.7</h4>
+                            <p>IMDb</p>
+                        </div>
+                    </div>
+                    <div class="card-title">
+                        <h3>The Hunger Games</h3>
+                        <p>Action, Adventure, Drama</p>
+                    </div>
+                </div>  
+            </div>
+        </div>
+    </div>
+ </div>    
+
+    <footer class="footer">
+        <div>
+            <h4 class="movies-link"><a href="#movie">Movies</a></h4>
+            <h4 class="tv-series-link"><a href="#tv series">TV series</a><h4>
+            <h4 class="coming-soon-link"><a href="#coming soon">Coming Soon</a></h4>
+        </div>
+        <div>
+            <a href="privacypolicy.html"><h4>Privacy Policy</h4></a>
+            <a href="cookie_policy.html"><h4>Cookie Policy</h4></a>
+            <a href="TermsOf.html"><h4>Terms of Use</h4></a>
+        </div>
+        <div>
+            <a href = "help-center.html"><h4>Help Center</h4></a>
+            <a href="support.html"><h4>Support</h4></a>
+            <a href="faq.html"><h4>FAQ</h4></a>
+        </div>
+        <div>
+            <h4>Follow Us</h4>
+            <div class="footer-social">
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-twitter"></i>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="../js/movie.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js" integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="../js/swiper-bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/movie.js"></script>
+    <script src="../js/search.js"></script>
+    <script src="../js/genre.js"></script>
+    <script src="../js/fav.js"></script>
+</body>
+</html>

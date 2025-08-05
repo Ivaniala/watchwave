@@ -1,0 +1,372 @@
+:root{
+    --mint: #929d92;
+    --gray: #bebebe;
+    --light-gray: #d9d9d9;
+    --comment-box: #171B27;
+    --comment-submit: #171B27;
+    --comment:#555D68;
+    --comment-date:#8A8A8A;
+    --warning:#E22C2C;
+    --yellow:#EEE62F;
+}
+
+
+body{
+    width: 100%;
+    height: 100vh;
+}
+
+.airmata-diujungsajadah{
+    width: 100%;
+    height: 100vh;
+}
+.movie-description{
+    display: flex;
+    justify-content: flex-start;
+    gap: 15%;
+    margin: 3rem 5%;
+}
+.movie-description img{
+    width: 330px;
+    height: 455px;
+}
+.movie-description .movie-content{
+    height: 455px;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.movie-content h1{
+    color: rgb(10, 10, 10);
+    font-weight: 500;
+    font-size: 2.4rem;
+}
+.movie-content p{
+    color: rgb(10, 10, 10);
+    font-weight: 400;
+    font-size: 1.1rem;
+}
+.movie-content .movie-type{
+    margin-top: 1.4rem;
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+}
+
+.movie-type .line{
+    height: 25px;
+    width: 1px;
+    background-color: rgb(10, 10, 10);
+}
+
+
+.movie-type p,
+span{
+    color: rgb(10, 10, 10);
+}
+span{
+    font-weight: 300;
+}
+
+.movie-content .imdb{
+    margin-top: 1.5rem;
+}
+.imdb p{
+    margin-top: 0.75rem;
+}
+
+.movie-content .trailer{
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 4rem;
+    gap: 4rem;
+}
+
+.trailer .save{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.save i{
+    color: #fff;
+    font-size: 1.85rem;
+    transition: color 0.25s ease-in-out;
+    -webkit-transition: color 0.25s ease-in-out;
+    -moz-transition: color 0.25s ease-in-out;
+    -ms-transition: color 0.25s ease-in-out;
+    -o-transition: color 0.25s ease-in-out;
+}
+
+
+.save i:hover{
+    color: #fff;
+    background-color: #985bf9;
+}
+
+
+.trailer .btn-trailer {
+    width: 160px; /* Lebar tombol trailer */
+    height: 45px; /* Tinggi tombol trailer */
+    background-color: #41436A;
+    color: #ede3f6;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 0.5 rem; /* Ukuran font yang disesuaikan */
+    border-radius: 30px; /* Radius sudut */
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase; /* Teks diubah menjadi huruf besar */
+    transition: all 0.3s ease; /* Transisi halus saat hover */
+}
+
+.trailer .btn-trailer:hover {
+    background-color: #ede3f6;
+    color: var(--comment); /* Warna teks saat tombol dihover */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Shadow halus saat dihover */
+}
+.button.favorite {
+    width: 160px;
+    height: 45px;
+    background-color: #41436A;
+    color: #ede3f6;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 0.5 rem;
+    border-radius: 30px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    border: none; /* Optional: remove default button border */
+    outline: none; /* Optional: remove outline on focus */
+}
+
+.button.favorite:hover {
+    background-color: #ede3f6;
+    color: var(--comment); /* Ganti dengan warna teks yang diinginkan saat dihover */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Shadow halus saat dihover */
+}
+
+.movie-desc-2{
+    width: 90%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin: 2rem 5%;
+}
+
+
+h2{
+    color: rgb(10, 10, 10);
+    font-weight: 500;
+    font-size: 2.15rem;
+}
+.movie-desc-2 p{
+    margin-top: 2rem;
+    color: rgb(10, 10, 10);
+    font-weight: 400;
+    letter-spacing: 1px;
+    line-height: 25px;
+}
+
+.movie-desc-2 .bb-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 6rem;
+}
+
+
+.comments {
+    width: 90%;
+    margin-top: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.comment-box {
+    margin-bottom: 20px;
+}
+.comment {
+    width: 700px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: var(--comment-box);
+    color: rgb(10, 10, 10);
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+.comment strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.comments .comment-box {
+    margin-top: 2rem;
+}
+
+.comments .comment-box input {
+    width: 700px;
+    height: 60px;
+    background-color: var(--comment-box); 
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    border: none;
+    outline: none;
+    padding: 0 2rem;
+    font-size: 0.8rem;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+}
+
+.comments .comment-box button {
+    margin-left: 1rem;
+    height: 60px;
+    background-color: var(--comment-submit); 
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    padding: 0 2rem;
+    font-size: 0.8rem;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+}
+
+.comments .comment-box button:hover {
+    background-color: #c0c0c0; 
+}
+
+.comments .users .user{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 4rem;
+    margin-top: 2rem;
+}
+
+.comments .users .user-com{
+    padding: 1rem;
+    width: 600px;
+    height: 120px;
+    background-color: var(--comment-box);
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+}
+
+.user-com .info{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+}
+
+.user-com h4{
+    color: #fff;
+    width: 150px;
+    cursor: pointer;
+}
+
+.user-com p{
+    color: var(--gray);
+    font-weight: 400;
+}
+
+.user-com .comment{
+    margin-top: 1.2rem;
+}
+.comment .warning{
+    color: var(--warning);
+    cursor: pointer;
+}
+
+.footer{
+    margin-top: 6rem;
+}
+
+
+
+
+@media(max-width:1200px){
+    .movie-description{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .movie-description .movie-content{
+        margin-top: 3rem;
+    }
+    .movie-content h1{
+        font-size: 1.6rem;
+    }
+
+    .movie-type p{
+        font-size: 0.75rem;
+    }
+    .movie-type .line{
+        height: 15px;
+    }
+
+    .imdb{
+        margin-top: 2rem;
+    }
+    .imdb p{
+        font-size: 0.85rem;
+        margin-top: 1rem;
+    }
+
+    .save i{
+        font-size: 1.5rem;
+    }
+
+    .movie-desc-2{
+        margin-top: 70%;
+    }
+    .movie-desc-2 h2{
+        font-size: 1.4rem;
+    }
+    .movie-desc-2 p{
+        font-size: 0.8rem;
+    }
+
+    .bb-img img{
+        width: 75%;
+        margin: 0 auto;
+    }
+
+    .comments{
+        margin-top: 30%;
+    }
+    .comments h2{
+        font-size: 1.4rem;
+    }
+    .comments .comment-box input{
+        width: 400px;
+    }
+
+
+    .users .user-com{
+        width: 350px;
+    }
+    .user-com p{
+        font-size: 0.6rem;
+    }
+}

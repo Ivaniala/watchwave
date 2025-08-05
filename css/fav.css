@@ -1,0 +1,348 @@
+::-webkit-scrollbar{
+    width: 18px;
+}
+::-webkit-scrollbar-track{
+    background: var(--comment-box);
+}
+::-webkit-scrollbar-thumb{
+    background: var(--comment);
+}
+
+
+a{
+    text-decoration: none;
+}
+i{
+    cursor: pointer;
+}
+li{
+    list-style-type: none;
+}
+img{
+    cursor: pointer;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body{
+    width: 100%;
+    font-family: 'Montserrat',sans-serif;
+    background-color: #ede3f6;
+    user-select: none;
+}
+.container{
+    width: 100%;
+
+    z-index: 50;
+}
+.container .header{
+    width: 100%;
+    height: 50px;
+    padding: 1rem 10%;
+    z-index: 55;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .logo h1{
+    color:#41436A;
+    font-size: 2.4rem;
+    cursor: pointer;
+    font-family: serif text;
+}
+.navBar .nav-items{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4rem;
+}
+
+
+.navBar ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.navBar ul li a{
+    color: #41436A;
+    font-size: 1.15rem;
+    font-weight: 600;
+    transition: color 0.25s ease-in-out;
+    -webkit-transition: color 0.25s ease-in-out;
+    -moz-transition: color 0.25s ease-in-out;
+    -ms-transition: color 0.25s ease-in-out;
+    -o-transition: color 0.25s ease-in-out;
+}
+.navBar ul li a:hover{
+    color: var(--pink);
+}
+.navBar .user i{
+    font-size: 1.3rem;
+    color: #41436A;
+    transition: color 0.25s ease-in-out;
+    -webkit-transition: color 0.25s ease-in-out;
+    -moz-transition: color 0.25s ease-in-out;
+    -ms-transition: color 0.25s ease-in-out;
+    -o-transition: color 0.25s ease-in-out;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    width: 25px;
+    cursor: pointer;
+    flex: 1;
+}
+*searchbutton
+li{
+    list-style: none;
+    width: 860;
+    margin: 0 auto;
+    font-family: 'Montserrat',sans-serif;
+}
+
+.search-box{
+    background: #E8E8E4;
+    position: absolute;
+    top: 54px;
+    right: 16.8%;
+    width: 350px;
+    height: 60px;
+    line-height: 60px;
+    box-shadow: 0 0 10px;
+    border-top: 4px solid #294B29;
+    display: none;
+}
+
+.search-box::before{
+    content: "";
+    position: absolute;
+    top: -32px;
+    right: 13px;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 14px solid transparent;
+    border-bottom: 14px solid #294B29;
+}
+
+.search-box input[type="text"]{
+    width: 200px;
+    padding: 5px 10px;
+    margin-left: 23px;
+    border: 1 px solid #294B29;
+    outline: none;
+}
+
+.search-box input[type="button"]{
+    width: 80px;
+    padding: 7px;
+    background: #294B29;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    margin-left: -6px;
+}
+
+.navBar .user i:hover{
+    color: var(--pink);
+}
+
+.navBar .close-btn i{
+    font-size: 2.4rem;
+    color: #41436A;
+    position: absolute;
+    top: 2rem;
+    right: 3rem;
+    display: none;
+}
+
+.header .navBar .open-btn{
+    position: absolute;
+    right: 4rem;
+    top: 1.5rem;
+    color: #fff;
+    font-size: 2rem;
+    display: none;
+}
+
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card-img {
+    position: relative;
+}
+
+.card-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.img-title {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px;
+}
+
+.card-title {
+    padding: 10px;
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+.card-title h3 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.card-title p {
+    margin: 5px 0;
+    color:  rgb(10, 10, 10);
+    font-size: 0.9rem;
+}
+/* Styling for the favorite movies container */
+#favorite-movies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+.favorite-title {
+    padding: 20px;
+    margin: 10px;
+    width: 200px;
+    text-align: left; /* Align text to the left */
+    font-family: 'Montserrat', sans-serif;
+    color: #41436A; /* Text color */
+    font-size: 0.9em; /* Adjust the font size as needed */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styling for each movie entry */
+.movie {
+    width: calc(33.33% - 10px); /* Adjust based on your layout */
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    position: relative;
+    margin-left: 30px;
+}
+
+
+/* Styling for the movie title */
+.img-title {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px;
+    width: calc(100% - 20px);
+    text-align: left;
+}
+
+.img-title h3 {
+    margin: 0;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.movie button {
+    background-color: #414364;
+    color: #ede3f6;
+    border: 1px solid #ddd;
+    padding: 8px 15px;
+    font-size: 0.8em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 30px auto 0;
+}
+
+.movie button:hover {
+    background-color: #985bf9;
+}
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    background-color: #171B27;
+}
+
+
+.footer div{
+    height: 60px;
+}
+.footer h4{
+    color: #d9d9d9;
+    margin-top: 0.4rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+.footer .footer-social{
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.footer-social i{
+    width: 29px;
+    height: 29px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    color: var(--black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+}
+
+.footer-social i:hover{
+    background-color: var(--black);
+    color: var(--pink);
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}

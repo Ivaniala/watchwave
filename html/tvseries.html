@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lemon&family=Libre+Baskerville:wght@400;700&family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="../css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../css/tvseries.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>TV Series</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('session.php')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.name) {
+                        document.getElementById('username').textContent = data.name;
+                        document.getElementById('user-link').setAttribute('href', '#'); // Optionally update the link
+                        document.getElementById('logout-button').style.display = 'block';
+                    } else {
+                        document.getElementById('username').textContent = '';
+                        document.getElementById('logout-button').style.display = 'none';
+                    }
+                });
+        });
+    </script>
+   
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <h1>WatchWave</h1>
+            </div>
+            <nav class="navBar">
+                <div class="open-btn" id="open">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="nav-items">
+                    <ul class="list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="movie.html">Movies</a></li>
+                        <li><a href="tvseries.html">TV Series</a></li>
+                        <li><a href="favorite.html">Favorite</a></li>
+                        <div class="close-btn" id="close">
+                            <i class="fa-solid fa-xmark"></i>
+                        </div>
+                    </ul>
+                    <ul class="user">
+                        <li>
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                            <div class="search-box">
+                                <input type="text">
+                                <input type="button" value="search">
+                            </div>
+                        <li><a href = "#"><i class = "fa-solid fa-user"></i></a>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+    </div>
+    <div class="movies">
+        <div class="movies-title">
+            <h1>TV Series</h1>
+        </div>
+        <div class="movies-card">
+            <div class="cards">
+                <div class="card-img">
+                    <img src="../img/series/Hidden Love.JPG" alt=""></a>
+                        <div class="img-title">
+                            <h4>8.6</h4>
+                            <p>IMDb</p>
+                        </div>
+                    </div>
+                    <div class="card-title">
+                        <a href="hiddenlove.html">
+                            <h3>Hidden Love</h3>
+                            <p>Drama, Romance</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="cards">
+                    <div class="card-img">
+                        <img src="../img/series/The penthouse .JPG" alt="">
+                        <div class="img-title">
+                            <h4>7.9</h4>
+                            <p>IMDb</p>
+                        </div>
+                    </div>
+                    <div class="card-title">
+                        <h3>Penthouse</h3>
+                        <p>Crime, Drama, Thriller</p>
+                    </div>
+                </div>
+                <div class="cards">
+                    <div class="card-img">
+                        <img src="../img/series/Wedding Agreement .JPG" alt="">
+                        <div class="img-title">
+                            <h4>6.7</h4>
+                            <p>IMDb</p>
+                        </div>
+                    </div>
+                    <div class="card-title">
+                        <h3>Wedding Agreement</h3>
+                        <p>Drama, Romance</p>
+                    </div>
+                </div>
+                <div class="cards">
+                    <div class="card-img">
+                        <img src="../img/series/Go Ahead.JPG" alt="">
+                        <div class="img-title">
+                            <h4>8.5</h4>
+                            <p>IMDb</p>
+                        </div>
+                    </div>
+                    <div class="card-title">
+                        <h3>Go Ahead</h3>
+                        <p>Drama, Comedy, Family</p>
+                    </div>
+                </div>
+                <div class="cards">
+                    <div class="card-img">
+                        <img src="../img/series/Vincenzo.JPG" alt="">
+                        <div class="img-title">
+                            <h4>8.4</h4>
+                            <p>IMDb</p>
+                        </div>
+                    </div>
+                    <div class="card-title">
+                        <h3>Vincenzo</h3>
+                        <p>Drama, Action</p>
+                    </div>
+                </div>
+                <div class="cards">
+                    <div class="card-img">
+                        <img src="../img/series/Antares.JPG" alt="">
+                        <div class="img-title">
+                            <h4>6.4</h4>
+                            <p>IMDb</p>
+                        </div>
+                    </div>
+                    <div class="card-title">
+                        <h3>Antares</h3>
+                        <p>Drama, Romance</p>
+                    </div>
+                </div>
+                <div class="cards">
+                    <div class="card-img">
+                        <img src="../img/series/Kaget Nikah.JPG" alt="">
+                        <div class="img-title">
+                            <h4>8.0</h4>
+                            <p>IMDb</p>
+                        </div>
+                    </div>
+                    <div class="card-title">
+                        <h3>Kaget Nikah</h3>
+                        <p>Drama, Romance, Comedy</p>
+                    </div>
+                </div>
+                <div class="cards">
+                    <div class="card-img">
+                        <img src="../img/series/Geez & Ann.JPG" alt="">
+                        <div class="img-title">
+                            <h4>5.1</h4>
+                            <p>IMDb</p>
+                        </div>
+                    </div>
+                    <div class="card-title">
+                        <h3>Geez & Ann</h3>
+                        <p>Drama, Romance</p>
+                    </div>
+                </div>
+                <div class="cards">
+                    <div class="card-img">
+                        <img src="../img/series/Imperfect the series.JPG" alt="">
+                        <div class="img-title">
+                            <h4>8.3</h4>
+                            <p>IMDb</p>
+                        </div>
+                    </div>
+                    <div class="card-title">
+                        <h3>Imperfect The Series</h3>
+                        <p>Drama, Comedy</p>
+                    </div>
+                </div>
+                <div class="cards">
+                    <div class="card-img">
+                        <img src="../img/series/Little mom.JPG" alt="">
+                        <div class="img-title">
+                            <h4>7.5</h4>
+                            <p>IMDb</p>
+                        </div>
+                    </div>
+                    <div class="card-title">
+                        <h3>Little Mom</h3>
+                        <p>Drama, Romance</p>
+                    </div>
+                </div>
+                <div class="cards">
+                    <div class="card-img">
+                        <img src="../img/series/Fireworks of my heart .JPG" alt="">
+                        <div class="img-title">
+                            <h4>7.9</h4>
+                            <p>IMDb</p>
+                        </div>
+                    </div>
+                    <div class="card-title">
+                        <h3>Fireworks Of My Heart</h3>
+                        <p>Drama, Romance, Action</p>
+                    </div>
+                </div>
+                <div class="cards">
+                    <div class="card-img">
+                        <img src="../img/series/Strong girl nam soon.JPG" alt="">
+                        <div class="img-title">
+                            <h4>8.3</h4>
+                            <p>IMDb</p>
+                        </div>
+                    </div>
+                    <div class="card-title">
+                        <h3>Strong Girl Nam Soon</h3>
+                        <p>Drama, Romance, Comedy</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div>
+            <a href="movie.html"><h4>Movies</h4></a>
+            <a href="tvseries.html"><h4>TV Series</h4></a>
+            <h4>Comming Soon</h4>
+        </div>
+        <div>
+            <a href="privacypolicy.html"><h4>Privacy Policy</h4></a>
+            <a href="cookie_policy.html"><h4>Cookie Policy</h4></a>
+            <a href="TermsOf.html"><h4>Terms of Use</h4></a>
+        </div>
+        <div>
+            <h4>Help Center</h4>
+            <a href="support.html"><h4>Support</h4></a>
+            <a href="faq.html"><h4>FAQ</h4></a>
+        </div>
+        <div>
+            <h4>Follow Us</h4>
+            <div class="footer-social">
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-twitter"></i>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js" integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="../js/swiper-bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/movie.js"></script> 
+       
+</body>
+</html>

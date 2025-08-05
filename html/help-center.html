@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Center - WatchWave</title>
+    <link rel="stylesheet" href="../css/help-center.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>WatchWave Help Center</h1>
+        </div>
+    </header>
+    <section class="search-section">
+        <div class="container">
+            <input type="text" placeholder="Search for help ..." id="search">
+        </div>
+    </section>
+    <section class="categories">
+        <div class="container">
+            <h2>Help Categories</h2>
+            <div class="category-grid">
+                <div class="category-item" onclick="toggleContent('account-settings-details')">
+                    <h3>Account & Settings</h3>
+                    <p>Learn how to manage your account and settings.</p>
+                </div>
+                <div class="category-item" onclick="toggleContent('content-playback-details')">
+                    <h3>Content & Playback</h3>
+                    <p>Understand how to find and play content.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <section class="content-details">
+        <div class="container">
+            <div class="content-item" id="account-settings-details">
+                <h3>Account & Settings</h3>
+                <p>Managing your WatchWave account is easy. Here are some topics you might find helpful:</p>
+                <ul>
+                    <li><strong>How to Change Your Password:</strong> Go to the account settings page and select "Change Password".</li>
+                    <li><strong>Updating Your Email Address:</strong> In your profile settings, enter your new email address and confirm it.</li>
+                    <li><strong>Managing Profiles:</strong> Create, edit, or delete profiles to personalize your experience.</li>
+                </ul>
+            </div>
+            <div class="content-item" id="content-playback-details">
+                <h3>Content & Playback</h3>
+                <p>Learn how to find and enjoy content on WatchWave:</p>
+                <ul>
+                    <li><strong>Searching for Movies and Shows:</strong> Use the search bar to find your favorite titles.</li>
+                    <li><strong>Using Watchlists:</strong> Add movies and shows to your watchlist for easy access later.</li>
+                    <li><strong>Adjusting Playback Settings:</strong> Change subtitles, audio language, and video quality in the playback settings.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="contact-section">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>If you need further assistance, please reach out to our support team.</p>
+            <a href="mailto:support@watchwave.com" class="contact-button">Contact Support</a>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 WatchWave. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleContent(id) {
+            var content = document.getElementById(id);
+            var allContents = document.querySelectorAll('.content-item');
+            allContents.forEach(function(item) {
+                if (item.id !== id) {
+                    item.style.display = 'none';
+                }
+            });
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block";
+            } else {
+                content.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

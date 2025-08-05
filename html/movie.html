@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lemon&family=Libre+Baskerville:wght@400;700&family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="../css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../css/movie.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Movie</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('session.php')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.name) {
+                        document.getElementById('username').textContent = data.name;
+                        document.getElementById('user-link').setAttribute('href', '#'); 
+                        document.getElementById('logout-button').style.display = 'block';
+                    } else {
+                        document.getElementById('username').textContent = '';
+                        document.getElementById('logout-button').style.display = 'none';
+                    }
+                });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <h1>WatchWave</h1>
+            </div>
+            <nav class="navBar">
+                    <div class="open-btn" id="open">
+                        <i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="nav-items">
+                    <ul class="list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="movie.html">Movies</a></li>
+                        <li><a href="tvseries.html">TV Series</a></li>
+                        <li><a href="favorite.html">Favorite</a></li>
+                        <div class="close-btn" id="close">
+                            <i class="fa-solid fa-xmark"></i>
+                        </div>
+                    </ul>
+                    <ul class="user">
+                        <li>
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                            <div class="search-box">
+                                <input type="text">
+                                <input type="button" value="search">
+                            </div>
+                        <li><a href = "login.html"><i class = "fa-solid fa-user"></i><span id="username"></span></a>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+    </div>
+
+    <div class="movies">
+        <div class="movies-title">
+            <h1>Movies</h1>
+        </div>
+        <div class="movies-card">
+            <div class="cards">
+                <div class="card-img">
+                    <img src="../img/movie/Laskar pelangi.jpg" alt="">
+                    <div class="img-title">
+                        <h4>7.9</h4>
+                        <p>IMDb</p>
+                    </div>
+                </div>
+                <div class="card-title">
+                    <a href="laskarpelangi.html">
+                    <h3>Laskar Pelangi</h3>
+                    <p>Adventure, Drama, Family</p>
+                    </a>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="card-img">
+                    <img src="../img/movie/Trolls Band Together Trailer - The Screen Guide.jpg" alt="">
+                    <div class="img-title">
+                        <h4>6.0</h4>
+                        <p>IMDb</p>
+                    </div>
+                </div>
+                <div class="card-title">
+                    <h3>Trolls Band Together</h3>
+                    <p>Comedy, Adventure, Animation</p>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="card-img">
+                    <img src="../img/movie/Enola Holmes 2 (2022)(1).jpg" alt="">
+                    <div class="img-title">
+                        <h4>6.8</h4>
+                        <p>IMDb</p>
+                    </div>
+                </div>
+                <div class="card-title">
+                    <h3>Enola Holmes 2</h3>
+                    <p>Drama, Adventure, Action</p>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="card-img">
+                    <img src="../img/movie/Train to busan peninsula.jpg" alt="">
+                    <div class="img-title">
+                        <h4>5.5</h4>
+                        <p>IMDb</p>
+                    </div>
+                </div>
+                <div class="card-title">
+                    <h3>Train to Busan Peninsula</h3>
+                    <p>Action, Horror, Thriller</p>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="card-img">
+                    <img src="../img/movie/The Devil Wears Prada.jpg" alt="">
+                    <div class="img-title">
+                        <h4>6.9</h4>
+                        <p>IMDb</p>
+                    </div>
+                </div>
+                <div class="card-title">
+                    <h3>The Devil Wears Prada</h3>
+                    <p>Drama, Comedy</p>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="card-img">
+                    <img src="../img/movie/aadc2.jpg" alt="">
+                    <div class="img-title">
+                        <h4>7.3</h4>
+                        <p>IMDb</p>
+                    </div>
+                </div>
+                <div class="card-title">
+                    <h3>Ada Apa Dengan Cinta 2</h3>
+                    <p>Drama, Romance</p>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="card-img">
+                    <img src="../img/movie/Dilan 1990 (2018).jpg" alt="">
+                    <div class="img-title">
+                        <h4>7.0</h4>
+                        <p>IMDb</p>
+                    </div>
+                </div>
+                <div class="card-title">
+                    <h3>Dilan 1990</h3>
+                    <p>Drama, Romance</p>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="card-img">
+                    <img src="../img/movie/The family plan.jpg" alt="">
+                    <div class="img-title">
+                        <h4>6.3</h4>
+                        <p>IMDb</p>
+                    </div>
+                </div>
+                <div class="card-title">
+                    <h3>The Family Plan</h3>
+                    <p>Action, Comedy</p>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="card-img">
+                    <img src="../img/movie/Harry Potter.jpg" alt="">
+                    <div class="img-title">
+                        <h4>7.6</h4>
+                        <p>IMDb</p>
+                    </div>
+                </div>
+                <div class="card-title">
+                    <h3>Harry Potter</h3>
+                    <p>Fantasy, Adventure, Mystery</p>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="card-img">
+                    <img src="../img/movie/Purple Hearts (2022).jpg" alt="">
+                    <div class="img-title">
+                        <h4>6.7</h4>
+                        <p>IMDb</p>
+                    </div>
+                </div>
+                <div class="card-title">
+                    <h3>Purple Hearts 2022</h3>
+                    <p>Drama, Musical, Romance</p>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="card-img">
+                    <img src="../img/movie/Sewu Dino.jpg" alt="">
+                    <div class="img-title">
+                        <h4>8.4</h4>
+                        <p>IMDb</p>
+                    </div>
+                </div>
+                <div class="card-title">
+                    <h3>Sewu Dino</h3>
+                    <p>Horror, Mystery, Thriller</p>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="card-img">
+                    <img src="../img/movie/Habibie & Ainun 3(1).jpg" alt="">
+                    <div class="img-title">
+                        <h4>7.2</h4>
+                        <p>IMDb</p>
+                    </div>
+                </div>
+                <div class="card-title">
+                    <h3>Habibie & Ainun 3</h3>
+                    <p>Romance, History, Biography</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div>
+            <a href="movie.html"><h4>Movies</h4></a>
+            <a href="tvseries.html"><h4>TV Series</h4></a>
+            <h4>Coming Soon</h4>
+        </div>
+        <div>
+            <a href="privacypolicy.html"><h4>Privacy Policy</h4></a>
+            <a href="cookie_policy.html"><h4>Cookie Policy</h4></a>
+            <a href="TermsOf.html"><h4>Terms of Use</h4></a>
+        </div>
+        <div>
+            <a href = "help-center.html"><h4>Help Center</h4></a>
+            <a href="support.html"><h4>Support</h4></a>
+            <a href="faq.html"><h4>FAQ</h4></a>
+        </div>
+        <div>
+            <h4>Follow Us</h4>
+            <div class="footer-social">
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-twitter"></i>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js" integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="../js/swiper-bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/movie.js"></script>
+</body>
+</html>
